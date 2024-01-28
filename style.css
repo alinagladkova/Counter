@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f7f7f7;
+  font-family: "Roboto";
+}
+
+.btn {
+  width: 60px;
+  height: 25px;
+  margin: 0 3px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  background-color: transparent;
+}
+
+.wrapper {
+  font-family: "Catamaran", sans-serif;
+  padding: 50px;
+}
+.counter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.counter__title {
+  margin: 0 auto;
+}
+
+.counter__result {
+  font-size: 24px;
+  margin: 0 auto;
+}
+
+.counter__edit {
+  margin: 0 auto;
+}
+
+.counter__result--change {
+  text-shadow: 1px 2px 2px #5c8192;
+  transition-duration: 0.2s;
+}
