@@ -5,20 +5,26 @@
 }
 
 body {
-  background-color: #f7f7f7;
+  background-color: #d9a464;
   font-family: "Roboto";
 }
 
 .btn {
+  cursor: pointer;
   width: 60px;
   height: 25px;
   margin: 0 3px;
   border-radius: 5px;
   border: 1px solid grey;
-  background-color: transparent;
+  background-color: #d3e19b;
 }
 
-.wrapper {
+.btn:hover {
+  background-color: #f4fbd5;
+  box-shadow: 2px 2px 5px #d3e19b;
+}
+
+.root {
   font-family: "Catamaran", sans-serif;
   padding: 50px;
 }
@@ -31,6 +37,7 @@ body {
 }
 
 .counter__title {
+  text-shadow: 1px 2px #d3e19b;
   margin: 0 auto;
 }
 
