@@ -35,6 +35,8 @@ class Counter {
   }
 
   _render(value) {
+    this._colorize();
+    this._setAnimation();
     this._subElements.counterValue.textContent = `${value}`;
   }
 
@@ -45,13 +47,26 @@ class Counter {
 
   _reset() {
     if (confirm(`Вы точно хотите сбросить счетчик со значения ${this._state} на ${this._initialValue}?`)) {
-      return this._render(this._initialValue);
+      this._render((this._state = this._initialValue));
     }
   }
 
   _decrease() {
     this._state -= this._decreaseValue;
     this._render(this._state);
+  }
+
+  _setAnimation() {
+    this._subElements.counterValue.classList.add("counter__result--change");
+    setTimeout(() => this._subElements.counterValue.classList.remove("counter__result--change"), 300);
+  }
+
+  _colorize() {
+    this._state === this._initialValue
+      ? (this._subElements.counterValue.style.color = `${this._colorZero}`)
+      : this._state > this._initialValue
+      ? (this._subElements.counterValue.style.color = `${this._colorPositive}`)
+      : (this._subElements.counterValue.style.color = `${this._colorNegative}`);
   }
 
   _getTemplate() {
@@ -89,7 +104,7 @@ const counter1 = new Counter({
   fontColor: {
     zero: "black",
     positive: "green",
-    negative: "dark blue",
+    negative: "pink",
   },
 });
 
